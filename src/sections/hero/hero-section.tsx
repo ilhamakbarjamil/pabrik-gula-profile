@@ -2,147 +2,107 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { 
+  Users, 
+  Factory, 
+  History, 
+  BarChart3, 
+  Award, 
+  Leaf, 
+  ShieldCheck 
+} from "lucide-react";
 
 import Container from "@/components/layout/container";
 import Button from "@/components/ui/button";
 
-export default function HeroSection() {
+export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f8fbff] pt-32 pb-20">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white">
       
-      {/* BACKGROUND EFFECT */}
-      <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-blue-200/30 blur-3xl" />
+      {/* BACKGROUND IMAGE - Menggunakan file factory.jpg Anda */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/factory.jpg" // Mengarah ke public/images/factory.jpg
+          alt="SugarCo Industrial Factory"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={100}
+        />
+        {/* Overlay Putih ke Transparan: Menjaga kontras teks di sisi kiri */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent w-full lg:w-[75%]" />
+        
+        {/* Subtle Dark Overlay untuk mobile agar teks putih/gelap tetap terbaca */}
+        <div className="absolute inset-0 bg-white/40 lg:hidden" />
+      </div>
 
-      <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr]">
-
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* BADGE */}
-            <div className="mb-6 inline-flex items-center rounded-full border border-blue-200 bg-white px-5 py-2 text-sm font-medium text-blue-700 shadow-sm">
-              Modern Sugar Industry Indonesia
-            </div>
-
-            {/* HEADING */}
-            <h1 className="max-w-2xl font-poppins text-5xl font-bold leading-[1.1] text-slate-900 md:text-7xl">
-              Premium Sugar
-              <span className="block text-blue-600">
-                Manufacturing
+      <Container className="relative z-10 pt-28 pb-16">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* CONTENT LEFT */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <span className="text-[#003B95] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
+                PT SugarCo Indonesia
               </span>
-              For Modern Industry
-            </h1>
-
-            {/* DESCRIPTION */}
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-600">
-              PT SugarCo Indonesia menghadirkan
-              produk gula berkualitas tinggi dengan
-              teknologi modern dan distribusi nasional.
-            </p>
-
-            {/* CTA */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button>
-                Explore Company
-              </Button>
-
-              <Button variant="outline">
-                View Products
-              </Button>
-            </div>
-
-            {/* MINI STATS */}
-            <div className="mt-16 grid grid-cols-3 gap-6">
-
-              <div>
-                <h3 className="text-3xl font-bold text-slate-900">
-                  80+
-                </h3>
-
-                <p className="mt-2 text-sm text-slate-500">
-                  Years Experience
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-slate-900">
-                  1M+
-                </h3>
-
-                <p className="mt-2 text-sm text-slate-500">
-                  Annual Production
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-slate-900">
-                  2500+
-                </h3>
-
-                <p className="mt-2 text-sm text-slate-500">
-                  Farmer Partners
-                </p>
-              </div>
-
-            </div>
-          </motion.div>
-
-          {/* RIGHT VISUAL */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-
-            {/* MAIN IMAGE */}
-            <div className="relative overflow-hidden rounded-[42px]">
-              <Image
-                src="/images/factory.jpg"
-                alt="Factory"
-                width={900}
-                height={900}
-                className="h-[700px] w-full object-cover"
-              />
-            </div>
-
-            {/* FLOATING METRIC CARD */}
-            <div className="absolute -left-10 top-10 w-[240px] rounded-[32px] bg-white p-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-
-              <div className="mb-4 inline-flex rounded-2xl bg-blue-100 p-4 text-3xl">
-                📈
-              </div>
-
-              <h3 className="text-4xl font-bold text-slate-900">
-                98%
-              </h3>
-
-              <p className="mt-2 leading-relaxed text-slate-500">
-                National industrial distribution growth.
+              
+              <h1 className="text-[#002B6B] text-5xl md:text-6xl lg:text-[80px] font-extrabold leading-[1.05] mb-8 tracking-tight">
+                Manis Alami, <br /> 
+                <span className="text-[#003B95]">Untuk Indonesia.</span>
+              </h1>
+              
+              <p className="text-gray-600 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">
+                Kami berkomitmen menghasilkan gula berkualitas tinggi secara berkelanjutan untuk kehidupan yang lebih baik.
               </p>
-            </div>
 
-            {/* SMALL IMAGE CARD */}
-            <div className="absolute -bottom-10 right-0 overflow-hidden rounded-[32px] bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+              <div className="flex flex-wrap gap-4 mb-16">
+                <Button className="bg-[#003B95] hover:bg-[#002B6B] text-white px-10 py-7 rounded-md text-base font-bold transition-all shadow-xl shadow-blue-900/20">
+                  Tentang Kami
+                </Button>
+                <Button variant="outline" className="border-2 border-[#003B95] text-[#003B95] hover:bg-blue-50 px-10 py-7 rounded-md text-base font-bold">
+                  Lihat Produk
+                </Button>
+              </div>
 
-              <Image
-                src="/images/product-1.jpg"
-                alt="Sugar Product"
-                width={240}
-                height={240}
-                className="h-[220px] w-[220px] rounded-[24px] object-cover"
-              />
-            </div>
 
-            {/* BLUE FLOATING BOX */}
-            <div className="absolute right-16 top-20 -z-10 h-[200px] w-[200px] rounded-[40px] bg-blue-600" />
+            </motion.div>
+          </div>
 
-          </motion.div>
+          {/* RIGHT SIDE - FLOATING CARDS */}
+          <div className="lg:col-span-5 relative hidden lg:flex justify-end h-[600px]">
+
+          </div>
         </div>
       </Container>
     </section>
+  );
+}
+
+// Helper Components
+function StatItem({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="text-[#003B95] bg-blue-50 p-2 rounded-lg">{icon}</div>
+      <div>
+        <h4 className="text-2xl font-bold text-[#002B6B] leading-none mb-1">{title}</h4>
+        <p className="text-[10px] text-gray-400 uppercase tracking-[0.1em] font-bold">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function ValueItem({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <li className="flex gap-5 items-start">
+      <div className="mt-1">{icon}</div>
+      <div>
+        <h5 className="font-bold text-base mb-1 tracking-tight">{title}</h5>
+        <p className="text-sm text-blue-100/70 leading-snug">{desc}</p>
+      </div>
+    </li>
   );
 }
