@@ -68,7 +68,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* SISI KANAN: TUMPUKAN FOTO (DIPERBESAR & DIGESER) */}
-          <div className="relative flex h-[500px] items-center justify-center lg:col-span-7 lg:h-[700px] lg:translate-x-16">
+          <div className="relative flex h-[500px] items-center justify-center lg:col-span-7 lg:h-[700px] lg:translate-x-40">
             {factoryImages.map((src, index) => (
               <motion.div
                 key={index}
