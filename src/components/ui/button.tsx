@@ -12,12 +12,12 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300",
+        "rounded-md px-6 py-3 text-sm font-semibold transition-all duration-300",
         {
-          "bg-blue-600 text-white hover:bg-blue-700":
+          "bg-blue-700 text-white hover:bg-blue-800":
             variant === "primary",
 
-          "border border-slate-300 bg-white hover:bg-slate-100":
+          "border border-slate-300 bg-white text-slate-800 hover:bg-slate-100":
             variant === "outline",
         }
       )}
