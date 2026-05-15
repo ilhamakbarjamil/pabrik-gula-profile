@@ -7,6 +7,7 @@ import AdvantagesSection from "@/sections/advantages/advantages-section";
 import ProductsSection from "@/sections/products/products-section";
 import GallerySection from "@/sections/gallery/gallery-section";
 import CTASection from "@/sections/cta/cta-section";
+import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
       <CTASection />
 
       <Footer />
+
+      <WhatsAppButton />
     </main>
   );
 }
