@@ -35,9 +35,9 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-3 text-slate-400">
-              <li>info@sugarco.com</li>
+              <li>info@berkahgula.com</li>
               <li>+62 812 0000 0000</li>
-              <li>Jakarta, Indonesia</li>
+              <li>Mojokerto, Indonesia</li>
             </ul>
           </div>
 

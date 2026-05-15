@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MessageCircle, Mail, ArrowRight } from "lucide-react"; // Import ikon yang kurang
 import Container from "@/components/layout/container";
-import Button from "@/components/ui/button";
 
 export default function CTASection() {
   return (
@@ -25,14 +25,43 @@ export default function CTASection() {
 
               <p className="max-w-xl text-blue-100 leading-relaxed">
                 Kami siap mendukung kebutuhan gula
-                berkualitas tinggi untuk industri maupun distribusi nasional.
+                berkualitas tinggi untuk industri maupun distribusi nasional dan internasional.
               </p>
             </div>
 
-            <div className="flex lg:justify-end">
-              <Button>
-                Hubungi Kami
-              </Button>
+            {/* SISI KANAN: TOMBOL AKSI */}
+            <div className="flex flex-col gap-4 lg:items-end">
+              
+              {/* Tombol WhatsApp */}
+              <motion.a
+                href="https://wa.me/your-number"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, x: -5 }}
+                whileTap={{ scale: 0.97 }}
+                className="flex w-full max-w-[280px] items-center justify-between rounded-2xl bg-[#25D366] p-4 font-bold text-white shadow-lg transition-all hover:bg-[#20ba5a]"
+              >
+                <div className="flex items-center gap-3">
+                  <MessageCircle size={24} />
+                  <span>WhatsApp Kami</span>
+                </div>
+                <ArrowRight size={18} />
+              </motion.a>
+
+              {/* Tombol Email */}
+              <motion.a
+                href="mailto:your-email@sugarco.id"
+                whileHover={{ scale: 1.03, x: -5 }}
+                whileTap={{ scale: 0.97 }}
+                className="flex w-full max-w-[280px] items-center justify-between rounded-2xl bg-white p-4 font-bold text-blue-700 shadow-lg transition-all hover:bg-blue-50"
+              >
+                <div className="flex items-center gap-3">
+                  <Mail size={24} />
+                  <span>Kirim Email</span>
+                </div>
+                <ArrowRight size={18} />
+              </motion.a>
+
             </div>
 
           </div>
