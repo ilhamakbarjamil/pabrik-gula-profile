@@ -47,7 +47,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <span className="text-[#003B95] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
-                PT SugarCo Indonesia
+                Berkah Gula Group
               </span>
               
               <h1 className="text-[#002B6B] text-5xl md:text-6xl lg:text-[80px] font-extrabold leading-[1.05] mb-8 tracking-tight">

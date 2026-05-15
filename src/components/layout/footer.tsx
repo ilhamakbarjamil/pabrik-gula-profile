@@ -8,7 +8,7 @@ export default function Footer() {
           
           <div>
             <h3 className="mb-4 text-2xl font-bold">
-              SugarCo
+              Berkah Gula Group
             </h3>
 
             <p className="text-slate-400 leading-relaxed">
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-8 text-center text-slate-500">
-          © 2026 SugarCo Indonesia. All rights reserved.
+          © 2026 Berkah Gula Group. All rights reserved.
         </div>
       </Container>
     </footer>
