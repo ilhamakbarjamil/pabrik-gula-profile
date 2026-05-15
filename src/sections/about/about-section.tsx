@@ -43,21 +43,20 @@ export default function AboutSection() {
             </div>
 
             <h2 className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
-              Perusahaan Gula Modern <br />
+              Perusahaan Gula <br />
               Dengan <span className="text-blue-600">Standar Kualitas</span>
             </h2>
 
             <p className="mb-6 text-lg leading-relaxed text-slate-600">
-              PT SugarCo Indonesia merupakan perusahaan pengolahan gula modern 
-              yang berkomitmen menghadirkan produk berkualitas tinggi dengan 
-              teknologi produksi terkini.
+              Berkah Gula Group merupakan perusahaan pengolahan gula  
+              yang berkomitmen menghadirkan produk berkualitas 
             </p>
 
-            <p className="mb-10 text-slate-600 leading-relaxed">
+            {/* <p className="mb-10 text-slate-600 leading-relaxed">
               Meskipun sebagai pemain baru yang inovatif, kami siap mendukung 
               industri nasional melalui distribusi gula berkualitas untuk kebutuhan 
               rumah tangga maupun industri besar.
-            </p>
+            </p> */}
 
             {/* <motion.button 
               whileHover={{ scale: 1.05 }}
