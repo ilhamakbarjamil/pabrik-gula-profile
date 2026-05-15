@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, MousePointer2 } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "@/components/layout/container";
 
 const products = [
@@ -29,70 +28,91 @@ const products = [
   },
   {
     title: "Liquid Sugar",
-    desc: "Kepraktisan gula cair untuk industri minuman modern.",
+    desc: "Kepraktisan gula cair untuk industri modern.",
     image: "https://images.unsplash.com/photo-1556760544-74068565f05c?q=80&w=800",
   },
 ];
 
 export default function ProductsSection() {
-  const [active, setActive] = useState(2); // Start from the middle
+  const [active, setActive] = useState(2);
+
+  // Animasi yang lebih cepat (Snappy)
+  // const springConfig = { type: "spring", stiffness: 300, damping: 30 };
+  const springConfig = {
+    type: "tween",
+    duration: 0.4,    // Ganti angka ini (0.4 = 400ms). Semakin kecil semakin cepat.
+    ease: "easeInOut"
+  };
 
   const next = () => setActive((prev) => (prev + 1) % products.length);
   const prev = () => setActive((prev) => (prev - 1 + products.length) % products.length);
 
   return (
-    <section className="relative overflow-hidden bg-black py-24 lg:py-40 text-white">
-      {/* Background Subtle Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900 to-black opacity-50" />
+    <section className="relative h-screen w-full overflow-hidden bg-[#f8fafc] flex items-center">
 
-      <Container className="relative z-10">
-        {/* HEADER */}
-        <div className="mb-20 text-center">
-          <motion.h4 
+      {/* 1. BACKGROUND MESH GRADIENT (Referensi Doku) */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute -left-[10%] top-[10%] h-[600px] w-[600px] rounded-full bg-teal-100/40 blur-[120px]" />
+        <div className="absolute -right-[5%] bottom-[5%] h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-[100px]" />
+        <div className="absolute left-[30%] top-[40%] h-[300px] w-[300px] rounded-full bg-emerald-50/50 blur-[80px]" />
+      </div>
+
+      {/* Noise Texture (Konsistensi 10jt) */}
+      <div className="pointer-events-none absolute inset-0 z-10 opacity-[0.03] mix-blend-overlay">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
+      </div>
+
+      <Container className="relative z-20 flex flex-col items-center">
+
+        {/* HEADER - Disamakan dengan About & Advantages */}
+        <div className="mb-12 text-center lg:mb-16">
+          {/* <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-xs font-bold uppercase tracking-[0.5em] text-neutral-500 mb-4"
+            viewport={{ once: true }}
+            className="mb-4 flex justify-center items-center gap-3"
           >
-            Koleksi Produk
-          </motion.h4>
-          <motion.h2 
+            <div className="h-[2px] w-8 bg-blue-600" />
+            <span className="text-[11px] font-bold uppercase tracking-[4px] text-blue-600">Our Collection</span>
+            <div className="h-[2px] w-8 bg-blue-600" />
+          </motion.div> */}
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-light tracking-tight"
+            viewport={{ once: true }}
+            className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl"
           >
-            Rahasia <span className="font-serif italic text-blue-500">Manis</span> Nusantara
+            Produk <span className="text-blue-600">Unggulan Kami.</span>
           </motion.h2>
-          <p className="mt-4 text-neutral-400 font-light">Paduan kualitas tebu pilihan dari tanah pertiwi</p>
         </div>
 
-        {/* CAROUSEL AREA */}
-        <div className="relative flex h-[500px] items-center justify-center lg:h-[650px]">
-          
-          {/* Navigation Buttons */}
-          <button 
-            onClick={prev}
-            className="absolute left-0 z-50 p-4 transition-all hover:scale-125 hover:text-blue-500 hidden md:block"
-          >
-            <ChevronLeft size={48} strokeWidth={1} />
-          </button>
-          
-          <button 
-            onClick={next}
-            className="absolute right-0 z-50 p-4 transition-all hover:scale-125 hover:text-blue-500 hidden md:block"
-          >
-            <ChevronRight size={48} strokeWidth={1} />
-          </button>
+        {/* 2. MAIN CAROUSEL AREA */}
+        <div className="relative flex w-full items-center justify-center h-[50vh] lg:h-[55vh] perspective-1000">
+
+          {/* Navigation Arrows */}
+          <div className="absolute inset-x-0 top-1/2 z-50 flex -translate-y-1/2 justify-between px-2 lg:px-10">
+            <button onClick={prev} className="p-4 text-slate-400 transition-all hover:scale-110 hover:text-blue-600">
+              <ChevronLeft size={48} strokeWidth={1.5} />
+            </button>
+            <button onClick={next} className="p-4 text-slate-400 transition-all hover:scale-110 hover:text-blue-600">
+              <ChevronRight size={48} strokeWidth={1.5} />
+            </button>
+          </div>
 
           {/* THE STACKED CARDS */}
-          <div className="relative flex w-full max-w-sm items-center justify-center lg:max-w-md">
+          <div className="relative flex h-full w-full max-w-[280px] items-center justify-center lg:max-w-[340px]">
             {products.map((product, index) => {
-              // Calculate position logic
               const offset = index - active;
               const isActive = index === active;
               const absOffset = Math.abs(offset);
-              
-              // Hide cards that are too far
+
               if (absOffset > 2) return null;
 
               return (
@@ -100,48 +120,63 @@ export default function ProductsSection() {
                   key={index}
                   initial={false}
                   animate={{
-                    x: offset * 140, // Distance between cards
+                    x: offset * (typeof window !== 'undefined' && window.innerWidth < 1024 ? 90 : 180),
                     scale: 1 - absOffset * 0.15,
                     zIndex: products.length - absOffset,
-                    opacity: 1 - absOffset * 0.3,
-                    rotateY: offset * -15, // Djarum style rotation
+                    opacity: 1 - absOffset * 0.4,
+                    rotateY: offset * -20,
                   }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  transition={springConfig}
                   onClick={() => setActive(index)}
-                  className={`absolute w-full cursor-pointer rounded-lg overflow-hidden bg-neutral-900 border border-white/5 shadow-[0_50px_100px_rgba(0,0,0,0.5)] ${isActive ? 'cursor-default' : 'hover:border-white/20'}`}
+                  className={`absolute h-full w-full cursor-pointer overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 ${isActive ? 'cursor-default ring-2 ring-blue-600/10' : 'hover:border-blue-200'}`}
                 >
-                  <div className="relative aspect-[3/4] lg:aspect-[2/3]">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-cover"
-                    />
-                    
-                    {/* Dark Overlay with Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                    
-                    {/* Card Content (Only fully visible on Active) */}
-                    <div className={`absolute inset-x-0 bottom-0 p-8 text-center transition-all duration-500 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                      <h3 className="text-2xl font-bold tracking-tight mb-2 uppercase">{product.title}</h3>
-                      <p className="text-xs text-neutral-400 mb-6 font-light uppercase tracking-widest">{product.desc}</p>
-                      
-                      <button className="inline-flex items-center gap-2 border border-white/30 px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-black">
-                        Selengkapnya +
-                      </button>
-                    </div>
-                  </div>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-60'}`} />
+
+                  {/* Content */}
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute inset-x-0 bottom-0 p-8 text-center"
+                      >
+                        <h3 className="mb-2 text-2xl font-bold tracking-tight text-white uppercase">
+                          {product.title}
+                        </h3>
+                        <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-300">
+                          {product.desc}
+                        </p>
+                        <button className="rounded-full bg-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-900 transition-all hover:bg-blue-600 hover:text-white">
+                          Selengkapnya
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               );
             })}
           </div>
         </div>
 
-        {/* BOTTOM SCROLL INDICATOR */}
-        <div className="mt-20 flex flex-col items-center gap-4 opacity-30">
-          <div className="text-[10px] uppercase tracking-[0.5em]">Scroll</div>
-          <div className="h-12 w-[1px] bg-white animate-pulse" />
+        {/* 3. PROGRESS INDICATOR */}
+        <div className="mt-12 flex gap-3">
+          {products.map((_, i) => (
+            <div
+              key={i}
+              className={`h-[3px] transition-all duration-500 rounded-full ${i === active ? 'w-12 bg-blue-600' : 'w-4 bg-slate-200'}`}
+            />
+          ))}
         </div>
+
       </Container>
     </section>
   );
