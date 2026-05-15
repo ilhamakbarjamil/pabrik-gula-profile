@@ -12,7 +12,7 @@ export default function Footer() {
             </h3>
 
             <p className="text-slate-400 leading-relaxed">
-              Perusahaan gula modern Indonesia
+              Perusahaan gula 
               dengan standar kualitas tinggi.
             </p>
           </div>
