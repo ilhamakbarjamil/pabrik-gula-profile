@@ -3,11 +3,13 @@ import clsx from "clsx";
 type ButtonProps = {
   children: React.ReactNode;
   variant?: "primary" | "outline";
+  className?: string;
 };
 
 export default function Button({
   children,
   variant = "primary",
+  className = "",
 }: ButtonProps) {
   return (
     <button

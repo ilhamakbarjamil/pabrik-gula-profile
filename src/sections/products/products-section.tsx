@@ -48,7 +48,7 @@ export default function ProductsSection() {
   const prev = () => setActive((prev) => (prev - 1 + products.length) % products.length);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#f8fafc] flex items-center">
+    <section id="produk" className="relative h-screen w-full overflow-hidden bg-[#f8fafc] flex items-center">
 
       {/* 1. BACKGROUND MESH GRADIENT (Referensi Doku) */}
       <div className="absolute inset-0 z-0">

@@ -20,7 +20,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 lg:py-32">
+<section id="tentang" className="relative overflow-hidden bg-white py-24 lg:py-32">      
       {/* Dekorasi Background */}
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
       

@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  Factory, 
-  History, 
-  BarChart3, 
-  Award, 
-  Leaf, 
-  ShieldCheck 
+import {
+  Users,
+  Factory,
+  History,
+  BarChart3,
+  Award,
+  Leaf,
+  ShieldCheck
 } from "lucide-react";
 
 import Container from "@/components/layout/container";
@@ -18,7 +18,7 @@ import Button from "@/components/ui/button";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white">
-      
+
       {/* BACKGROUND IMAGE - Menggunakan file factory.jpg Anda */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -31,14 +31,14 @@ export default function Hero() {
         />
         {/* Overlay Putih ke Transparan: Menjaga kontras teks di sisi kiri */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent w-full lg:w-[75%]" />
-        
+
         {/* Subtle Dark Overlay untuk mobile agar teks putih/gelap tetap terbaca */}
         <div className="absolute inset-0 bg-white/40 lg:hidden" />
       </div>
 
       <Container className="relative z-10 pt-28 pb-16">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* CONTENT LEFT */}
           <div className="lg:col-span-7">
             <motion.div
@@ -49,23 +49,31 @@ export default function Hero() {
               <span className="text-[#003B95] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
                 Berkah Gula Group
               </span>
-              
+
               <h1 className="text-[#002B6B] text-5xl md:text-6xl lg:text-[80px] font-extrabold leading-[1.05] mb-8 tracking-tight">
-                Manis Alami, <br /> 
+                Manis Alami, <br />
                 <span className="text-[#003B95]">Untuk Indonesia.</span>
               </h1>
-              
+
               <p className="text-gray-600 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">
                 Kami berkomitmen menghasilkan gula berkualitas tinggi secara berkelanjutan untuk kehidupan yang lebih baik.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
-                <Button className="bg-[#003B95] hover:bg-[#002B6B] text-white px-10 py-7 rounded-md text-base font-bold transition-all shadow-xl shadow-blue-900/20">
-                  Tentang Kami
-                </Button>
-                <Button variant="outline" className="border-2 border-[#003B95] text-[#003B95] hover:bg-blue-50 px-10 py-7 rounded-md text-base font-bold">
-                  Lihat Produk
-                </Button>
+                <a href="#tentang">
+                  <Button className="bg-[#003B95] hover:bg-[#002B6B] text-white px-10 py-7 rounded-md text-base font-bold transition-all shadow-xl shadow-blue-900/20">
+                    Tentang Kami
+                  </Button>
+                </a>
+
+                <a href="#produk">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-[#003B95] text-[#003B95] hover:bg-blue-50 px-10 py-7 rounded-md text-base font-bold"
+                  >
+                    Lihat Produk
+                  </Button>
+                </a>
               </div>
 
 
