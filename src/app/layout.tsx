@@ -14,7 +14,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Home -Berkah Gula Group",
+  title: "Home:Berkah Gula Group",
   description:
     "Perusahaan gula modern Indonesia dengan standar kualitas tinggi.",
 

@@ -18,7 +18,7 @@ const advantages = [
     image: "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&q=80&w=400" // Foto perkebunan tebu
   },
   {
-    icon: Factory,
+    icon: Truck,
     title: "Distribusi Nasional",
     description: "Mesin ekstraksi otomatis yang memaksimalkan rendemen tebu tanpa merusak nutrisi alami.",
     image: "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&q=80&w=400" // Foto mesin pabrik
