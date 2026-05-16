@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppButton() {
     const phoneNumber = "6281200000000";
@@ -15,27 +15,26 @@ export default function WhatsAppButton() {
             rel="noopener noreferrer"
             aria-label="Hubungi kami via WhatsApp"
             className="
-    fixed
-    bottom-5
-    right-5
-    z-[999]
-    flex
-    h-12
-    w-12
-    items-center
-    justify-center
-    rounded-full
-    bg-green-500
-    text-white
-    shadow-[0_10px_25px_rgba(34,197,94,0.35)]
-    transition-all
-    duration-300
-    hover:-translate-y-1
-    hover:bg-green-600
-  "
+                fixed
+                bottom-7
+                right-7
+                z-[999]
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                bg-[#25D366]
+                text-white
+                shadow-[0_10px_25px_rgba(37,211,102,0.35)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#1ebe5d]
+            "
         >
-            <MessageCircle size={28} />
+            <FaWhatsapp size={30} />
         </a>
-
     );
 }
