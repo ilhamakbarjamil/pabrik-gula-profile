@@ -17,7 +17,7 @@ import Button from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white">
+    <section id="beranda" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white">
 
       {/* BACKGROUND IMAGE - Menggunakan file factory.jpg Anda */}
       <div className="absolute inset-0 z-0">

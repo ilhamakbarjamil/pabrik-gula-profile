@@ -16,8 +16,8 @@ export default function WhatsAppButton() {
             aria-label="Hubungi kami via WhatsApp"
             className="
                 fixed
-                bottom-8
-                right-10
+                bottom-5
+                right-5
                 z-[999]
                 flex
                 h-12
