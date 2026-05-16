@@ -22,7 +22,7 @@ export default function Home() {
 
       <ProductsSection />
 
-      <GallerySection />
+      {/* <GallerySection /> */}
 
       <CTASection />
 
