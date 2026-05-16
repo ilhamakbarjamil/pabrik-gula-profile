@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Mail, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import Container from "@/components/layout/container";
 
 export default function CTASection() {
@@ -55,7 +57,7 @@ export default function CTASection() {
                 className="flex w-full max-w-[280px] items-center justify-between rounded-2xl bg-[#25D366] p-4 font-bold text-white shadow-lg transition-all hover:bg-[#20ba5a]"
               >
                 <div className="flex items-center gap-3">
-                  <MessageCircle size={24} />
+                  <FaWhatsapp size={26} />
                   <span>WhatsApp Kami</span>
                 </div>
                 <ArrowRight size={18} />
@@ -69,7 +71,7 @@ export default function CTASection() {
                 className="flex w-full max-w-[280px] items-center justify-between rounded-2xl bg-white p-4 font-bold text-blue-700 shadow-lg transition-all hover:bg-blue-50"
               >
                 <div className="flex items-center gap-3">
-                  <Mail size={24} />
+                  <MdEmail size={26} />
                   <span>Kirim Email</span>
                 </div>
                 <ArrowRight size={18} />
