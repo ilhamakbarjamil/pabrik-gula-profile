@@ -94,7 +94,7 @@ export default function ProductsSection() {
         </div>
 
         {/* 2. MAIN CAROUSEL AREA */}
-        <div className="relative flex w-full items-center justify-center h-[50vh] lg:h-[55vh] perspective-1000">
+        <div className="relative flex w-full items-center justify-center h-[58vh] lg:h-[65vh] perspective-1000">
 
           {/* Navigation Arrows */}
           <div className="absolute inset-x-0 top-1/2 z-50 flex -translate-y-1/2 justify-between px-2 lg:px-10">
@@ -107,7 +107,7 @@ export default function ProductsSection() {
           </div>
 
           {/* THE STACKED CARDS */}
-          <div className="relative flex h-full w-full max-w-[280px] items-center justify-center lg:max-w-[340px]">
+          <div className="relative flex h-full w-full max-w-[260px] items-center justify-center lg:max-w-[300px]">
             {products.map((product, index) => {
               const offset = index - active;
               const isActive = index === active;
@@ -128,7 +128,7 @@ export default function ProductsSection() {
                   }}
                   transition={springConfig}
                   onClick={() => setActive(index)}
-                  className={`absolute h-full w-full cursor-pointer overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 ${isActive ? 'cursor-default ring-2 ring-blue-600/10' : 'hover:border-blue-200'}`}
+                  className={`absolute h-full w-full cursor-pointer overflow-hidden rounded-md border border-white bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 ${isActive ? 'cursor-default ring-2 ring-blue-600/10' : 'hover:border-blue-200'}`}
                 >
                   <img
                     src={product.image}
