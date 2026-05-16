@@ -5,10 +5,10 @@ import Container from "@/components/layout/container";
 
 export default function AboutSection() {
   const factoryImages = [
-    "/images/pabrik-1.jpg", 
-    "/images/pabrik-2.jpg",
-    "/images/pabrik-3.jpg",
-    "/images/pabrik-4.jpg",
+    "/images/factory.jpg",
+    "/images/factory.jpg",
+    "/images/factory.jpg",
+    "/images/factory.jpg",
   ];
 
   // Koordinat tumpukan kartu (diatur agar lebih menyebar ke kanan)
@@ -23,11 +23,11 @@ export default function AboutSection() {
     <section className="relative overflow-hidden bg-white py-24 lg:py-32">
       {/* Dekorasi Background */}
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
-      
+
       <Container>
         {/* Menggunakan grid 12 kolom: 5 untuk teks, 7 untuk foto */}
         <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
-          
+
           {/* SISI KIRI: KONTEN TEKS */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -48,8 +48,8 @@ export default function AboutSection() {
             </h2>
 
             <p className="mb-6 text-lg leading-relaxed text-slate-600">
-              Berkah Gula Group merupakan perusahaan pengolahan gula  
-              yang berkomitmen menghadirkan produk berkualitas 
+              Berkah Gula Group merupakan perusahaan pengolahan gula
+              yang berkomitmen menghadirkan produk berkualitas
             </p>
 
             {/* <p className="mb-10 text-slate-600 leading-relaxed">
@@ -73,33 +73,34 @@ export default function AboutSection() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: 100 }}
-                whileInView={{ 
-                  opacity: 1, 
-                  x: cardTransforms[index].x, 
-                  y: cardTransforms[index].y, 
-                  rotate: cardTransforms[index].rotate 
+                whileInView={{
+                  opacity: 1,
+                  x: cardTransforms[index].x,
+                  y: cardTransforms[index].y,
+                  rotate: cardTransforms[index].rotate,
                 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.1,
-                  ease: "easeOut" 
+                  ease: "easeOut",
                 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                    scale: 1.05, 
-                    zIndex: 50,
-                    rotate: 0 
+                whileHover={{
+                  scale: 1.05,
+                  zIndex: 50,
+                  rotate: 0,
                 }}
-                className="absolute rounded-[2.5rem] bg-white p-3 shadow-2xl shadow-slate-200 border border-slate-100 transition-all duration-300"
+                className="absolute rounded-md bg-white p-3 shadow-2xl shadow-slate-200 border border-slate-100 transition-all duration-300"
                 style={{ zIndex: 10 + index }}
               >
                 {/* Ukuran Foto yang Diperbesar */}
-                <div className="relative h-64 w-48 overflow-hidden rounded-[2rem] lg:h-[480px] lg:w-[340px]">
+                <div className="relative h-64 w-48 overflow-hidden rounded-sm lg:h-[480px] lg:w-[340px]">
                   <img
                     src={src}
                     alt={`Fasilitas Pabrik ${index + 1}`}
                     className="h-full w-full object-cover"
                   />
+
                   {/* Efek Shadow di dalam foto agar lebih elegan */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
