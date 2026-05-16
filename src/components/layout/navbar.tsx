@@ -51,8 +51,17 @@ export default function Navbar() {
         </button>
 
         {/* TOMBOL KANAN */}
-        <div className="hidden md:block translate-x-20">
+        {/* <div className="hidden md:block translate-x-20">
           <Button>Hubungi Kami</Button>
+        </div> */}
+
+        {/* TOMBOL KANAN */}
+        <div className="hidden md:block translate-x-20">
+          <Button>
+            <a href="#kontak">
+              Hubungi Kami
+            </a>
+          </Button>
         </div>
       </Container>
     </header>

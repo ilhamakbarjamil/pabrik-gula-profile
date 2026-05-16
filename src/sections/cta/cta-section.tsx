@@ -23,7 +23,7 @@ export default function CTASection() {
   )}&body=${emailBody}`;
 
   return (
-    <section className="section-padding bg-slate-900 text-white">
+    <section id="kontak" className="section-padding bg-slate-900 text-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
