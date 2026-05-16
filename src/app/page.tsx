@@ -11,24 +11,33 @@ import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Navbar />
 
-      <HeroSection />
+      <main className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
+        <section className="snap-start min-h-screen">
+          <HeroSection />
+        </section>
 
-      <AboutSection />
+        <section className="snap-start min-h-screen">
+          <AboutSection />
+        </section>
 
-      <AdvantagesSection />
+        <section className="snap-start min-h-screen">
+          <AdvantagesSection />
+        </section>
 
-      <ProductsSection />
+        <section className="snap-start min-h-screen">
+          <ProductsSection />
+        </section>
 
-      {/* <GallerySection /> */}
-
+        {/* <section className="snap-start min-h-screen">
+          <GallerySection />
+        </section> */}
+      </main>
       <CTASection />
-
       <Footer />
-
       <WhatsAppButton />
-    </main>
+    </>
   );
 }

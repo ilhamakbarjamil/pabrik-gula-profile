@@ -45,3 +45,8 @@ h5,
 h6 {
   font-family: var(--font-poppins);
 }
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
