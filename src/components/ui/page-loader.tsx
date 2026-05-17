@@ -17,13 +17,25 @@ export default function PageLoader({ isLoading }: PageLoaderProps) {
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
         >
           <div className="w-full max-w-sm px-6 text-center">
-            <h1 className="text-xl font-semibold tracking-tight text-[#002B6B]">
+            <motion.h1
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="text-xl font-semibold tracking-tight text-[#002B6B]"
+              style={{ fontFamily: "var(--font-poppins)" }}
+            >
               Berkah Gula Group
-            </h1>
+            </motion.h1>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
+              className="mt-2 text-sm text-slate-500"
+              style={{ fontFamily: "var(--font-inter)" }}
+            >
               Memuat halaman perusahaan
-            </p>
+            </motion.p>
 
             <div className="mx-auto mt-8 h-[2px] w-40 overflow-hidden rounded-full bg-slate-200">
               <motion.div
