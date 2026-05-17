@@ -34,7 +34,7 @@ export default function PageLoader({ isLoading }: PageLoaderProps) {
               className="mt-2 text-sm text-slate-500"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              Memuat halaman perusahaan
+              Memuat halaman
             </motion.p>
 
             <div className="mx-auto mt-8 h-[2px] w-40 overflow-hidden rounded-full bg-slate-200">

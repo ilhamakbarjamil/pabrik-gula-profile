@@ -9,7 +9,6 @@ import HeroSection from "@/sections/hero/hero-section";
 import AboutSection from "@/sections/about/about-section";
 import AdvantagesSection from "@/sections/advantages/advantages-section";
 import ProductsSection from "@/sections/products/products-section";
-import GallerySection from "@/sections/gallery/gallery-section";
 import CTASection from "@/sections/cta/cta-section";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
 import PageLoader from "@/components/ui/page-loader";
@@ -18,11 +17,19 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const handlePageLoad = () => {
       setIsLoading(false);
-    }, 1500);
+    };
 
-    return () => clearTimeout(timer);
+    if (document.readyState === "complete") {
+      setIsLoading(false);
+    } else {
+      window.addEventListener("load", handlePageLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handlePageLoad);
+    };
   }, []);
 
   return (
@@ -49,12 +56,11 @@ export default function Home() {
         </section>
 
         <section className="snap-start min-h-screen">
-          {/* <GallerySection /> */}
           <CTASection />
-      <Footer />
+          <Footer />
         </section>
       </main>
-      
+
       <WhatsAppButton />
     </>
   );
