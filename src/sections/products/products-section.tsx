@@ -42,7 +42,7 @@ export default function ProductsSection() {
     type: "tween",
     duration: 0.4,    // Ganti angka ini (0.4 = 400ms). Semakin kecil semakin cepat.
     ease: "easeInOut"
-  };
+  } as const;
 
   const next = () => setActive((prev) => (prev + 1) % products.length);
   const prev = () => setActive((prev) => (prev - 1 + products.length) % products.length);
