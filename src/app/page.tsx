@@ -31,12 +31,13 @@ export default function Home() {
           <ProductsSection />
         </section>
 
-        {/* <section className="snap-start min-h-screen">
-          <GallerySection />
-        </section> */}
-      </main>
-      <CTASection />
+        <section className="snap-start min-h-screen">
+          {/* <GallerySection /> */}
+          <CTASection />
       <Footer />
+        </section>
+      </main>
+      
       <WhatsAppButton />
     </>
   );
