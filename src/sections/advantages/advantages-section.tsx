@@ -52,7 +52,7 @@ export default function ProductsSection() {
             className="lg:col-span-7"
           >
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-[0.25em] text-blue-700">
-              Produk Kami
+              Keunggulan Kami
             </span>
 
             <h2 className="max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
