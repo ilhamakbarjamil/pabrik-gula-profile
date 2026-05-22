@@ -26,7 +26,7 @@ export default function AboutSection() {
               </span>
             </div>
 
-            <h2 className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
+            <h2 className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-6xl">
               Perusahaan Gula <br />
               Dengan <span className="text-blue-600">Standar Kualitas</span>
             </h2>
