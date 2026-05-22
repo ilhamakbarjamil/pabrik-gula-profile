@@ -26,7 +26,7 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8fafc] py-24 lg:py-32">
+    <section id="produk" className="relative w-full overflow-hidden bg-[#f8fafc] py-24 lg:py-32">
       <div className="absolute inset-0 z-0">
         <div className="absolute -left-[10%] top-[10%] h-[600px] w-[600px] rounded-full bg-teal-100/40 blur-[120px]" />
         <div className="absolute -right-[5%] bottom-[5%] h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-[100px]" />
