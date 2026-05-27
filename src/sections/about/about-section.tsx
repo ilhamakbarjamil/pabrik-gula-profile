@@ -52,7 +52,7 @@ export default function AboutSection() {
               <div className="relative overflow-hidden shadow-2xl shadow-slate-200">
                 <div className="relative h-[330px] overflow-hidden sm:h-[430px] lg:h-[560px]">
                   <img
-                    src="/images/factory.jpg"
+                    src="/images/about.png"
                     alt="Fasilitas Pabrik Gula"
                     className="h-full w-full object-cover"
                   />

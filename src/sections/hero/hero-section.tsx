@@ -22,7 +22,7 @@ export default function Hero() {
       {/* BACKGROUND IMAGE - Menggunakan file factory.jpg Anda */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/factory.jpg" // Mengarah ke public/images/factory.jpg
+          src="/images/foto-gudang.png" // Mengarah ke public/images/factory.jpg
           alt="SugarCo Industrial Factory"
           fill
           className="object-cover object-center"

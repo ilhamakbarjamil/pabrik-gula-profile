@@ -11,7 +11,7 @@ const products = [
     description:
       "Gula berkualitas yang siap memenuhi kebutuhan pasar dalam negeri, mulai dari distributor, industri, hingga mitra bisnis skala besar.",
     image:
-      "https://images.unsplash.com/photo-1581447100595-3a81308337ec?auto=format&fit=crop&q=80&w=800",
+      "images/nasional.png",
   },
   {
     icon: Globe2,
@@ -19,7 +19,7 @@ const products = [
     description:
       "Produk gula dengan standar mutu yang mendukung kebutuhan perdagangan global dan peluang ekspansi ke pasar internasional.",
     image:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800",
+      "images/internasional.png",
   },
   {
     icon: Store,
@@ -27,7 +27,7 @@ const products = [
     description:
       "Produk gula kemasan praktis untuk kebutuhan rumah tangga, toko, minimarket, swalayan, dan pasar modern.",
     image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&q=80&w=800",
+      "images/retail.png",
   },
 ];
 
@@ -99,14 +99,14 @@ export default function ProductsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                   {/* Icon */}
-                  <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center bg-white text-blue-700 shadow-lg">
+                  {/* <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center bg-white text-blue-700 shadow-lg">
                     <Icon size={26} />
-                  </div>
+                  </div> */}
 
                   {/* Number */}
-                  <div className="absolute right-6 top-6 text-5xl font-extrabold text-white/20">
+                  {/* <div className="absolute right-6 top-6 text-5xl font-extrabold text-white/20">
                     0{index + 1}
-                  </div>
+                  </div> */}
 
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
