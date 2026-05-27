@@ -19,10 +19,6 @@ const navItems = [
     href: "#produk",
   },
   {
-    label: "Galeri",
-    href: "#galeri",
-  },
-  {
     label: "Kontak",
     href: "#kontak",
   },
