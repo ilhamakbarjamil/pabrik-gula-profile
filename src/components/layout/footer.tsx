@@ -36,7 +36,7 @@ export default function Footer() {
 
             <ul className="space-y-3 text-slate-400">
               <li>info@berkahgula.com</li>
-              <li>+62 812 0000 0000</li>
+              <li>62 813-3328-3917</li>
               <li>Mojokerto, Indonesia</li>
             </ul>
           </div>

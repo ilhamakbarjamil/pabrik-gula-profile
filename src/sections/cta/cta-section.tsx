@@ -8,7 +8,7 @@ import Container from "@/components/layout/container";
 
 export default function CTASection() {
   const phoneNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6281234567890";
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6281333283917";
 
   const whatsappMessage =
     process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
