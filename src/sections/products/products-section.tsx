@@ -8,19 +8,19 @@ const products = [
     title: "Gula Kristal Putih",
     desc: "Untuk kebutuhan konsumsi umum, distribusi pasar, dan kebutuhan harian masyarakat.",
     image:
-      "https://images.unsplash.com/photo-1622212999396-85750278770a?q=80&w=800",
+      "images/kemasan_ritail.png",
   },
   {
     title: "Gula Industri",
     desc: "Untuk kebutuhan bahan baku industri makanan, minuman, pabrik, dan produksi skala besar.",
     image:
-      "https://images.unsplash.com/photo-1581447100595-3a81308337ec?q=80&w=800",
+      "images/industri.png",
   },
   {
     title: "Gula Kemasan Retail",
     desc: "Untuk produk kemasan yang dijual langsung ke konsumen melalui toko, minimarket, swalayan, atau pasar modern.",
     image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?q=80&w=800",
+      "images/retail.png",
   },
 ];
 
