@@ -26,7 +26,10 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <section id="produk" className="relative w-full overflow-hidden bg-[#f8fafc] py-24 lg:py-32">
+    <section
+      id="produk"
+      className="relative w-full overflow-hidden bg-[#f8fafc] pt-12 pb-20 lg:pt-16 lg:pb-24"
+    >
       <div className="absolute inset-0 z-0">
         <div className="absolute -left-[10%] top-[10%] h-[600px] w-[600px] rounded-full bg-teal-100/40 blur-[120px]" />
         <div className="absolute -right-[5%] bottom-[5%] h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-[100px]" />
@@ -47,8 +50,12 @@ export default function ProductsSection() {
         </svg>
       </div>
 
+
       <Container className="relative z-20">
-        <div className="mb-14 text-center lg:mb-16">
+        <span className="mx-auto mb-4 block text-center text-sm font-bold uppercase tracking-[0.25em] text-blue-700">
+          Produk Kami
+        </span>
+        <div className="mb-8 text-center lg:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +77,7 @@ export default function ProductsSection() {
               viewport={{ once: true }}
               className="group overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="aspect-square w-full overflow-hidden bg-slate-100">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src={product.image}
                   alt={product.title}

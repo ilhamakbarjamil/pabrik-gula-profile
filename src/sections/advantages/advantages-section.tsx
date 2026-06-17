@@ -33,7 +33,7 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#fdfcfb] py-24 lg:py-36">
+    <section className="relative overflow-hidden bg-[#fdfcfb] pt-12 pb-20 lg:pt-16 lg:pb-24">
       {/* Background Texture */}
       <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.05]" />
 
@@ -43,7 +43,7 @@ export default function ProductsSection() {
 
       <Container className="relative z-10">
         {/* Header */}
-        <div className="mb-16 grid gap-8 lg:mb-20 lg:grid-cols-12 lg:items-end">
+        <div className="mb-8 grid gap-6 lg:mb-10 lg:grid-cols-12 lg:items-end">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function ProductsSection() {
                 className="group border border-slate-100 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/70"
               >
                 {/* Image */}
-                <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                   <img
                     src={item.image}
                     alt={item.title}

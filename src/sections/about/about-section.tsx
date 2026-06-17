@@ -7,7 +7,7 @@ export default function AboutSection() {
   return (
     <section
       id="tentang"
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-24"
     >
       {/* Dekorasi Background */}
       <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
@@ -43,7 +43,7 @@ export default function AboutSection() {
             className="mx-auto mb-8 max-w-5xl"
           >
             <div className="relative overflow-hidden shadow-2xl shadow-slate-200">
-              <div className="relative h-[300px] overflow-hidden sm:h-[420px] lg:h-[520px]">
+              <div className="relative h-[260px] overflow-hidden sm:h-[360px] lg:h-[440px]">
                 <img
                   src="/images/about.png"
                   alt="Fasilitas Pabrik Gula"
@@ -61,7 +61,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="mx-auto max-w-3xl text-justify text-lg leading-relaxed text-slate-600"
           >
-            Berkah Gula Group merupakan penyedia dan gudang gula yang berfokus pada pemenuhan kebutuhan gula berkualitas untuk berbagai keperluan, mulai dari kebutuhan usaha, agen, toko, hingga mitra dalam skala yang lebih luas. Dengan komitmen pada kualitas produk, ketersediaan stok, dan pelayanan yang profesional, kami hadir sebagai mitra terpercaya dalam penyediaan gula untuk mendukung kebutuhan pasar secara berkelanjutan.
+            Berkah Gula Group merupakan penyedia gula yang berfokus pada pemenuhan kebutuhan gula berkualitas untuk berbagai keperluan, mulai dari kebutuhan usaha, agen, toko, hingga mitra dalam skala yang lebih luas.
           </motion.p>
         </div>
       </Container>
