@@ -59,7 +59,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600"
+            className="mx-auto max-w-3xl text-justify text-lg leading-relaxed text-slate-600"
           >
             Berkah Gula Group merupakan penyedia dan gudang gula yang berfokus pada pemenuhan kebutuhan gula berkualitas untuk berbagai keperluan, mulai dari kebutuhan usaha, agen, toko, hingga mitra dalam skala yang lebih luas. Dengan komitmen pada kualitas produk, ketersediaan stok, dan pelayanan yang profesional, kami hadir sebagai mitra terpercaya dalam penyediaan gula untuk mendukung kebutuhan pasar secara berkelanjutan.
           </motion.p>
