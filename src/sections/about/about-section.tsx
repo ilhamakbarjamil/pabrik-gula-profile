@@ -5,62 +5,64 @@ import Container from "@/components/layout/container";
 
 export default function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-28">
-      {/* Background lembut */}
-      <div className="absolute -left-24 top-10 h-80 w-80 rounded-full bg-blue-50 blur-3xl" />
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-slate-100/80 blur-3xl" />
+    <section
+      id="tentang"
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      {/* Dekorasi Background */}
+      <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
 
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          {/* KONTEN KIRI */}
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          {/* CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative z-10 lg:col-span-5"
+            className="mx-auto max-w-3xl"
           >
-            <div className="mb-5 inline-flex items-center gap-3">
-              {/* <div className="h-[2px] w-10 bg-blue-600" /> */}
+            <div className="mb-5 inline-flex items-center justify-center gap-3">
               <span className="text-sm font-bold uppercase tracking-[4px] text-blue-600">
                 Tentang Kami
               </span>
             </div>
 
-            <h2 className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
+            <h2 className="mb-8 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-6xl">
               Perusahaan Gula <br />
               Dengan <span className="text-blue-600">Standar Kualitas</span>
             </h2>
-
-            <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600">
-              Berkah Gula Group merupakan perusahaan pengolahan gula yang
-              berkomitmen menghadirkan produk berkualitas untuk kebutuhan
-              industri, distribusi pasar nasional dan internasional.
-            </p>
           </motion.div>
 
-          {/* FOTO KANAN */}
+          {/* IMAGE DI BAWAH JUDUL */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
             viewport={{ once: true }}
-            // className="relative z-10 lg:col-span-7"
-            className="relative z-10 lg:col-span-7 lg:translate-x-25"
+            className="mx-auto mb-8 max-w-5xl"
           >
-            <div className="relative">
-              {/* Foto utama */}
-              <div className="relative overflow-hidden shadow-2xl shadow-slate-200">
-                <div className="relative h-[330px] overflow-hidden sm:h-[430px] lg:h-[560px]">
-                  <img
-                    src="/images/factory.jpg"
-                    alt="Fasilitas Pabrik Gula"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+            <div className="relative overflow-hidden shadow-2xl shadow-slate-200">
+              <div className="relative h-[300px] overflow-hidden sm:h-[420px] lg:h-[520px]">
+                <img
+                  src="/images/about.png"
+                  alt="Fasilitas Pabrik Gula"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
+
+          {/* PARAGRAF */}
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-3xl text-justify text-lg leading-relaxed text-slate-600"
+          >
+            Berkah Gula Group merupakan penyedia dan gudang gula yang berfokus pada pemenuhan kebutuhan gula berkualitas untuk berbagai keperluan, mulai dari kebutuhan usaha, agen, toko, hingga mitra dalam skala yang lebih luas. Dengan komitmen pada kualitas produk, ketersediaan stok, dan pelayanan yang profesional, kami hadir sebagai mitra terpercaya dalam penyediaan gula untuk mendukung kebutuhan pasar secara berkelanjutan.
+          </motion.p>
         </div>
       </Container>
     </section>
