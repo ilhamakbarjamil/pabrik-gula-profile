@@ -7,87 +7,72 @@ const products = [
   {
     title: "Gula Kristal Putih",
     desc: "Untuk kebutuhan konsumsi umum, distribusi pasar, dan kebutuhan harian masyarakat.",
-    image:
-      "https://images.unsplash.com/photo-1622212999396-85750278770a?q=80&w=800",
+    segment: "Konsumsi & distribusi",
+    format: "Curah dan kemasan",
   },
   {
     title: "Gula Industri",
     desc: "Untuk kebutuhan bahan baku industri makanan, minuman, pabrik, dan produksi skala besar.",
-    image:
-      "https://images.unsplash.com/photo-1581447100595-3a81308337ec?q=80&w=800",
-  },
-  {
-    title: "Gula Kemasan Retail",
-    desc: "Untuk produk kemasan yang dijual langsung ke konsumen melalui toko, minimarket, swalayan, atau pasar modern.",
-    image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?q=80&w=800",
+    segment: "Industri makanan",
+    format: "Pasokan skala besar",
   },
 ];
 
 export default function ProductsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8fafc] py-24 lg:py-32">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute -left-[10%] top-[10%] h-[600px] w-[600px] rounded-full bg-teal-100/40 blur-[120px]" />
-        <div className="absolute -right-[5%] bottom-[5%] h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-[100px]" />
-        <div className="absolute left-[30%] top-[40%] h-[300px] w-[300px] rounded-full bg-emerald-50/50 blur-[80px]" />
-      </div>
-
-      <div className="pointer-events-none absolute inset-0 z-10 opacity-[0.03] mix-blend-overlay">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <filter id="noise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.65"
-              numOctaves="3"
-              stitchTiles="stitch"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)" />
-        </svg>
-      </div>
-
-      <Container className="relative z-20">
-        <div className="mb-14 text-center lg:mb-16">
+    <section className="bg-[#fdfcfb] py-24 lg:py-32">
+      <Container>
+        <div className="mb-14 max-w-2xl">
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl"
+            className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl"
           >
             Produk <span className="text-blue-600">Unggulan Kami.</span>
           </motion.h2>
+          <p className="mt-5 text-base leading-relaxed text-slate-600">
+            Menyediakan kebutuhan gula untuk distribusi harian dan pasokan industri.
+          </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="divide-y divide-slate-200 border-y border-slate-200">
           {products.map((product, index) => (
-            <motion.div
+            <motion.article
               key={product.title}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="grid gap-6 py-8 md:grid-cols-12 md:items-start lg:py-10"
             >
-              <div className="aspect-square w-full overflow-hidden bg-slate-100">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-
-              <div className="p-6">
-                <h3 className="mb-3 text-xl font-bold tracking-tight text-slate-900">
+              <div className="md:col-span-4">
+                <p className="text-sm font-semibold text-blue-700">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900">
                   {product.title}
                 </h3>
+              </div>
 
-                <p className="text-sm leading-relaxed text-slate-600">
+              <div className="md:col-span-5">
+                <p className="max-w-xl text-base leading-relaxed text-slate-600">
                   {product.desc}
                 </p>
               </div>
-            </motion.div>
+
+              <div className="grid gap-5 text-sm md:col-span-3">
+                <div>
+                  <p className="font-semibold text-slate-900">Segmen</p>
+                  <p className="mt-1 text-slate-500">{product.segment}</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900">Format</p>
+                  <p className="mt-1 text-slate-500">{product.format}</p>
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </Container>
