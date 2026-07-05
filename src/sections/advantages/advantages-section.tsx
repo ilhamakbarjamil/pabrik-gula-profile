@@ -9,15 +9,15 @@ const products = [
     icon: PackageCheck,
     title: "Distribusi Nasional",
     description:
-      "Gula berkualitas yang siap memenuhi kebutuhan pasar dalam negeri, mulai dari distributor, industri, hingga mitra bisnis skala besar.",
+      "",
     image:
-      "images/nasional.png",
+      "images/distribusi_nasional.png",
   },
   {
     icon: Globe2,
     title: "Pasar Internasional",
     description:
-      "Produk gula dengan standar mutu yang mendukung kebutuhan perdagangan global dan peluang ekspansi ke pasar internasional.",
+      "",
     image:
       "images/internasional.png",
   },
@@ -25,7 +25,7 @@ const products = [
     icon: Store,
     title: "Kemasan Retail",
     description:
-      "Produk gula kemasan praktis untuk kebutuhan rumah tangga, toko, minimarket, swalayan, dan pasar modern.",
+      "",
     image:
       "images/retail.png",
   },
