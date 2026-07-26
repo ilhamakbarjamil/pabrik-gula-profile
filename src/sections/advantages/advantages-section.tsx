@@ -23,7 +23,7 @@ const products = [
   },
   {
     icon: Store,
-    title: "Kemasan Retail",
+    title: "Kebutuhan Retail",
     description:
       "",
     image:

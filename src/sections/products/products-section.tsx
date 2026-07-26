@@ -30,6 +30,7 @@ export default function ProductsSection() {
             viewport={{ once: true }}
             className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl"
           >
+            
             Produk <span className="text-blue-600">Unggulan Kami.</span>
           </motion.h2>
           <p className="mt-5 text-base leading-relaxed text-slate-600">
