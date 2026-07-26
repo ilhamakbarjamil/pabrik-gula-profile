@@ -51,12 +51,12 @@ export default function Hero() {
               </span>
 
               <h1 className="text-[#002B6B] text-5xl md:text-6xl lg:text-[80px] font-extrabold leading-[1.05] mb-8 tracking-tight">
-                Manis Alami, <br />
-                <span className="text-[#003B95]">Untuk Indonesia.</span>
+                Distributor Gula, <br />
+                <span className="text-[#003B95]">Tangan Pertama Langsung dari Pabrik.</span>
               </h1>
 
               <p className="text-gray-600 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">
-                Kami berkomitmen menghasilkan gula berkualitas tinggi secara berkelanjutan untuk kehidupan yang lebih baik.
+                Menyediakan pasokan gula kristal putih dan gula industri dalam skala besar dengan harga kompetitif dan stok yang selalu terjaga.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
