@@ -52,7 +52,7 @@ export default function Hero() {
 
               <h1 className="text-[#002B6B] text-5xl md:text-6xl lg:text-[80px] font-extrabold leading-[1.05] mb-8 tracking-tight">
                 Distributor Gula, <br />
-                <span className="text-[#003B95]">Tangan Pertama Langsung dari Pabrik.</span>
+                <span className="text-[#003B95]">Langsung dari Pabrik.</span>
               </h1>
 
               <p className="text-gray-600 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">

@@ -5,7 +5,7 @@ import Container from "@/components/layout/container";
 
 export default function ProductSection() {
   return (
-    <section id="produk" className="bg-white py-20 lg:py-32">
+    <section id="produk" className="bg-white py-20 lg:py-27">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
