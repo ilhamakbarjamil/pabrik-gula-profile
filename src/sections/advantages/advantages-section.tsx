@@ -44,12 +44,12 @@ export default function ProductsSection() {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="mb-6 inline-flex items-center gap-3">
+            {/* <div className="mb-6 inline-flex items-center gap-3">
               <span className="h-[2px] w-8 bg-blue-700"></span>
               <span className="text-sm font-bold uppercase tracking-[4px] text-blue-700">
                 Keunggulan Kami
               </span>
-            </div>
+            </div> */}
 
             <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
               Produk Gula Untuk{" "}
