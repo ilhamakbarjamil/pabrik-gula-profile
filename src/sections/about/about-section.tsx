@@ -6,7 +6,12 @@ import Container from "@/components/layout/container";
 import { CheckCircle2 } from "lucide-react";
 
 // Komponen Pendukung untuk Animasi Angka
-function Counter({ value, duration = 2 }) {
+type CounterProps = {
+  value: string;
+  duration?: number;
+};
+
+function Counter({ value, duration = 2 }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -23,11 +28,21 @@ function Counter({ value, duration = 2 }) {
     }
   }, [isInView, value, duration]);
 
-  return <span ref={ref}>{count}{value.includes("+") ? "+" : ""}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {value.includes("+") ? "+" : ""}
+    </span>
+  );
 }
 
+type Stat = {
+  label: string;
+  value: string;
+};
+
 export default function AboutSection() {
-  const stats = [
+  const stats: Stat[] = [
     { label: "Tahun Pengalaman", value: "10+" },
     { label: "Ton Gula / Bulan", value: "500+" },
     { label: "Mitra Aktif", value: "100+" },
