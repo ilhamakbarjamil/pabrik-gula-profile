@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Globe2, PackageCheck, Store } from "lucide-react";
 import Container from "@/components/layout/container";
 
-const products = [
+const advantages = [
   {
     icon: PackageCheck,
     title: "Distribusi Nasional",
@@ -28,14 +29,25 @@ const products = [
   },
 ];
 
-export default function ProductsSection() {
+export default function AdvantageSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Animasi otomatis bergantian setiap 3 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % advantages.length);
+    }, 3000); // 3000ms = 3 detik
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-[#fdfcfb] pt-16 pb-20 lg:pt-24 lg:pb-32">
-      {/* Background Texture - Memberi kesan premium */}
+      {/* Background Texture */}
       <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.05]" />
 
       <Container className="relative z-10">
-        {/* Header Section - Mengikuti style About agar konsisten */}
+        {/* Header Section */}
         <div className="mb-12 grid gap-8 lg:mb-20 lg:grid-cols-12 lg:items-end">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -70,8 +82,9 @@ export default function ProductsSection() {
 
         {/* Product Cards Grid */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {products.map((item, index) => {
+          {advantages.map((item, index) => {
             const Icon = item.icon;
+            const isActive = activeIndex === index;
 
             return (
               <motion.div
@@ -80,40 +93,70 @@ export default function ProductsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                onMouseEnter={() => setActiveIndex(index)} // Jika mouse masuk, ganti fokus ke kartu ini
+                className={`group relative overflow-hidden rounded-[2rem] bg-white transition-all duration-700 ${
+                  isActive ? "shadow-2xl -translate-y-4 ring-1 ring-blue-100" : "shadow-md translate-y-0"
+                }`}
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <img
+                  <motion.img
                     src={item.image}
                     alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    animate={{ scale: isActive ? 1.1 : 1 }}
+                    transition={{ duration: 3 }}
+                    className="h-full w-full object-cover"
                   />
                   
-                  {/* Overlay Gradient: Dibuat lebih pekat di bawah agar teks terbaca */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+                  {/* Overlay Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent transition-opacity duration-700 ${
+                    isActive ? "opacity-90" : "opacity-70"
+                  }`} />
 
-                  {/* Icon Floating (Optional - Memberi kesan modern) */}
-                  <div className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
-                    <Icon size={24} />
+                  {/* Icon Floating */}
+                  <div className={`absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-700 ${
+                    isActive 
+                    ? "bg-blue-600 border-blue-400 text-white scale-110 shadow-lg shadow-blue-500/50" 
+                    : "bg-white/10 backdrop-blur-md border-white/20 text-white scale-100"
+                  }`}>
+                    <Icon size={28} />
                   </div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <div className="mb-2 text-sm font-bold text-blue-400 uppercase tracking-widest">
+                  <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                    <div className={`mb-3 text-sm font-bold transition-colors duration-500 ${
+                        isActive ? "text-blue-400" : "text-white/60"
+                    } uppercase tracking-widest`}>
                       0{index + 1}
                     </div>
-                    <h3 className="mb-4 text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">
+                    <h3 className={`mb-4 text-2xl font-bold transition-all duration-500 ${
+                        isActive ? "text-white scale-105 origin-left" : "text-white/90"
+                    }`}>
                       {item.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-slate-200 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                      {item.description}
-                    </p>
+                    
+                    {/* Description yang muncul otomatis */}
+                    <div className={`grid transition-all duration-700 ease-in-out ${
+                        isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}>
+                        <p className="overflow-hidden text-sm leading-relaxed text-slate-200">
+                          {item.description}
+                        </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Bottom Border Accent */}
-                <div className="h-2 w-0 bg-blue-700 transition-all duration-500 group-hover:w-full" />
+                {/* Progress Bar Loader (Visual Indicator) */}
+                <div className="absolute bottom-0 left-0 h-1.5 w-full bg-slate-200/20">
+                  {isActive && (
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 3, ease: "linear" }}
+                      className="h-full bg-blue-600"
+                    />
+                  )}
+                </div>
               </motion.div>
             );
           })}
