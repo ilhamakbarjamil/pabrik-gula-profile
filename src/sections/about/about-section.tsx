@@ -1,8 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import Container from "@/components/layout/container";
-import { CheckCircle2 } from "lucide-react"; 
+import { CheckCircle2 } from "lucide-react";
+
+// Komponen Pendukung untuk Animasi Angka
+function Counter({ value, duration = 2 }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      // Mengambil angka saja dari string (misal "500+" jadi 500)
+      const numericValue = parseInt(value.replace(/[^0-9]/g, ""));
+      const controls = animate(0, numericValue, {
+        duration: duration,
+        onUpdate: (latest) => setCount(Math.floor(latest)),
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value, duration]);
+
+  return <span ref={ref}>{count}{value.includes("+") ? "+" : ""}</span>;
+}
 
 export default function AboutSection() {
   const stats = [
@@ -37,12 +59,11 @@ export default function AboutSection() {
                 className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105 md:aspect-[16/10] lg:aspect-[4/5]"
               />
             </div>
-            {/* Aksen Dekoratif di belakang gambar */}
-            <div className="absolute -bottom-6 -right-6 -z-10 h-72 w-72 rounded-3xl bg-blue-600/10" />
+            {/* Shadow dekoratif biru di belakang gambar telah dihapus sesuai request */}
             <div className="absolute -top-6 -left-6 -z-10 h-32 w-32 rounded-full bg-blue-50" />
           </motion.div>
 
-          {/* KOLOM KANAN: CONTENT (SESUAI REQUEST) */}
+          {/* KOLOM KANAN: CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +76,6 @@ export default function AboutSection() {
               </span>
             </div>
 
-            {/* Headline Size Tetap (4xl/6xl) */}
             <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
               Perusahaan Gula <br />
               Dengan <span className="text-blue-600">Standar Kualitas</span>
@@ -85,11 +105,13 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Statistik */}
+            {/* Statistik dengan Animasi Angka Bergerak */}
             <div className="flex flex-wrap gap-10 border-t border-slate-100 pt-8">
               {stats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-4xl font-black text-blue-600">{stat.value}</div>
+                  <div className="text-4xl font-black text-blue-600">
+                    <Counter value={stat.value} />
+                  </div>
                   <div className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500">
                     {stat.label}
                   </div>
