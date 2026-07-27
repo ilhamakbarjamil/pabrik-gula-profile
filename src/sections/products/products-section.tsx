@@ -45,7 +45,7 @@ const products = [
 
 export default function ProductSection() {
   return (
-    <section id="produk" className="bg-slate-50 py-20 lg:py-32">
+    <section id="produk" className="bg-slate-50 py-20 lg:py-12">
       <Container>
         {/* Header Section */}
         <div className="mb-16 max-w-3xl">
