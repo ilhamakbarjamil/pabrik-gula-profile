@@ -4,6 +4,33 @@ import { motion } from "framer-motion";
 import Container from "@/components/layout/container";
 
 export default function ProductSection() {
+  const phoneNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+
+  const whatsappMessage =
+    "Halo, saya ingin meminta penawaran harga untuk produk Gula Kristal Putih Nusakita (Bulk).";
+
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+
+  const whatsappAppUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+  const whatsappWebUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  const handleWhatsAppClick = () => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      window.location.href = whatsappAppUrl;
+
+      setTimeout(() => {
+        window.location.href = whatsappWebUrl;
+      }, 1200);
+
+      return;
+    }
+
+    window.open(whatsappWebUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="produk" className="bg-white py-20 lg:py-27">
       <Container>
@@ -66,7 +93,11 @@ export default function ProductSection() {
 
             {/* CTA YANG SIMPEL */}
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-600 text-white px-10 py-5 rounded-xl font-bold hover:bg-blue-700 transition-all text-center">
+              <button
+                type="button"
+                onClick={handleWhatsAppClick}
+                className="bg-blue-600 text-white px-10 py-5 rounded-xl font-bold hover:bg-blue-700 transition-all text-center"
+              >
                 Minta Penawaran Harga
               </button>
               <button className="border border-slate-200 text-slate-900 px-10 py-5 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
