@@ -42,7 +42,7 @@ export default function AdvantageSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#fdfcfb] pt-16 pb-20 lg:pt-24 lg:pb-32">
+    <section className="relative overflow-hidden bg-[#fdfcfb] pt-8 pb-20 lg:pt-12 lg:pb-32">
       {/* Background Texture */}
       <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.05]" />
 
