@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import Container from "@/components/layout/container";
 
 export default function ProductSection() {
-  const phoneNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
   const whatsappMessage =
     "Halo, saya ingin meminta penawaran harga untuk produk Gula Kristal Putih Nusakita (Bulk).";
@@ -36,23 +35,25 @@ export default function ProductSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
-          {/* SISI KIRI: VISUAL PRODUK YANG BERSIH */}
+          {/* SISI KIRI: VISUAL PRODUK — FULL BLEED */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative bg-slate-50 rounded-3xl p-12 flex items-center justify-center min-h-[500px]"
+            className="relative overflow-hidden rounded-3xl min-h-[500px]"
           >
-            {/* Foto Karung Nusakita (Satu Saja, Besar) */}
+            {/* Foto Karung Nusakita — memenuhi seluruh container */}
             <img 
-              src="/images/nusakita-bulk.png" 
+              src="/images/produk.png" 
               alt="Nusakita Gula Kristal Putih 50kg" 
-              className="max-h-[450px] w-auto drop-shadow-2xl"
+              className="absolute inset-0 h-full w-full object-cover"
             />
-            {/* Keterangan Fisik Kecil di pojok */}
-            <div className="absolute bottom-8 left-8 border-l-2 border-blue-600 pl-4">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Kemasan Standar</p>
-              <p className="text-sm font-bold text-slate-900">Karung PP 50 Kilogram</p>
+            {/* Keterangan Fisik Kecil di pojok, dengan backdrop agar tetap terbaca di atas foto */}
+            <div className="absolute bottom-8 left-8 flex items-center gap-4 rounded-r-lg border-l-2 border-blue-600 bg-white/90 py-3 pl-4 pr-5 backdrop-blur-sm">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Kemasan Standar</p>
+                <p className="text-sm font-bold text-slate-900">Karung PP 50 Kilogram</p>
+              </div>
             </div>
           </motion.div>
 
