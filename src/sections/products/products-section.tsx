@@ -2,111 +2,116 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/layout/container";
+import { CheckCircle2, FileText, MessageCircle } from "lucide-react";
 
 export default function ProductSection() {
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-
   const whatsappMessage =
     "Halo, saya ingin meminta penawaran harga untuk produk Gula Kristal Putih Nusakita (Bulk).";
-
   const encodedMessage = encodeURIComponent(whatsappMessage);
-
   const whatsappAppUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
   const whatsappWebUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   const handleWhatsAppClick = () => {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
     if (isMobile) {
       window.location.href = whatsappAppUrl;
-
       setTimeout(() => {
         window.location.href = whatsappWebUrl;
       }, 1200);
-
       return;
     }
-
     window.open(whatsappWebUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section id="produk" className="bg-white py-20 lg:py-27">
+    <section
+      id="produk"
+      className="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24 lg:pb-32"
+    >
+      <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl opacity-60" />
+
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
-          {/* SISI KIRI: VISUAL PRODUK — FULL BLEED */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
+        <div className="relative z-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          {/* KOLOM KIRI: SATU FOTO BESAR (sama dengan About) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative overflow-hidden rounded-3xl min-h-[500px]"
+            viewport={{ once: true }}
+            className="relative"
           >
-            {/* Foto Karung Nusakita — memenuhi seluruh container */}
-            <img 
-              src="/images/produk.png" 
-              alt="Nusakita Gula Kristal Putih 50kg" 
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            {/* Keterangan Fisik Kecil di pojok, dengan backdrop agar tetap terbaca di atas foto */}
-            <div className="absolute bottom-8 left-8 flex items-center gap-4 rounded-r-lg border-l-2 border-blue-600 bg-white/90 py-3 pl-4 pr-5 backdrop-blur-sm">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Kemasan Standar</p>
-                <p className="text-sm font-bold text-slate-900">Karung PP 50 Kilogram</p>
-              </div>
+            <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl shadow-slate-200">
+              <img
+                src="/images/produk.png"
+                alt="Produk Gula Nusakita Bulk"
+                className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105 md:aspect-[16/10] lg:aspect-[4/5]"
+              />
             </div>
+            <div className="absolute -top-6 -left-6 -z-10 h-32 w-32 rounded-full bg-blue-50" />
           </motion.div>
 
-          {/* SISI KANAN: DETAIL TEKNIS (DATA-DRIVEN) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+          {/* KOLOM KANAN: CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col pt-4"
+            viewport={{ once: true }}
           >
-            <span className="text-blue-600 font-bold tracking-[3px] text-xs uppercase mb-4">Katalog Resmi</span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-              Gula Kristal Putih <br /> Nusakita (Bulk)
+            <div className="mb-6 inline-flex items-center gap-3">
+              <span className="text-sm font-bold uppercase tracking-[4px] text-blue-600">
+                Katalog Resmi
+              </span>
+            </div>
+
+            <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
+              Gula Pasir <br />
+              <span className="text-blue-600">Nusakita (Bulk)</span>
             </h2>
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Kami menyalurkan produk Gula Kristal Putih (GKP) merk Nusakita produksi PTPN Nusantara. Produk ini merupakan standar utama untuk kebutuhan distribusi pasar, industri makanan, dan stok gudang skala besar.
+
+            <p className="mb-8 text-lg leading-relaxed text-slate-600">
+              Kami menyalurkan produk Gula Kristal Putih (GKP) merk Nusakita
+              produksi PTPN Nusantara. Produk ini merupakan standar utama untuk
+              kebutuhan industri makanan, katering, dan distribusi skala besar.
             </p>
 
-            {/* TABEL SPESIFIKASI (Terlihat sangat profesional & bukan AI) */}
-            <div className="border-t border-slate-100">
-              <div className="grid grid-cols-2 py-4 border-b border-slate-100">
-                <span className="text-sm font-bold text-slate-400 uppercase">Produksi</span>
-                <span className="text-sm font-bold text-slate-900">PTPN Nusantara</span>
+            <div className="mb-10 grid grid-cols-1 gap-5 border-b border-slate-100 pb-10 sm:grid-cols-2">
+              <div className="flex items-center gap-3 text-slate-700">
+                <CheckCircle2 className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold">Produksi PTPN</span>
               </div>
-              <div className="grid grid-cols-2 py-4 border-b border-slate-100">
-                <span className="text-sm font-bold text-slate-400 uppercase">Standarisasi</span>
-                <span className="text-sm font-bold text-slate-900">SNI 3140.3:2010</span>
+              <div className="flex items-center gap-3 text-slate-700">
+                <CheckCircle2 className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold">Standar SNI Resmi</span>
               </div>
-              <div className="grid grid-cols-2 py-4 border-b border-slate-100">
-                <span className="text-sm font-bold text-slate-400 uppercase">Kemasan</span>
-                <span className="text-sm font-bold text-slate-900">Karung dengan Lapisan Plastik</span>
+              <div className="flex items-center gap-3 text-slate-700">
+                <CheckCircle2 className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold">Karung PP 50kg</span>
               </div>
-              <div className="grid grid-cols-2 py-4 border-b border-slate-100">
-                <span className="text-sm font-bold text-slate-400 uppercase">Kapasitas</span>
-                <span className="text-sm font-bold text-slate-900">Skala Tonase (Ready Stock)</span>
+              <div className="flex items-center gap-3 text-slate-700">
+                <CheckCircle2 className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold">Ready Stock Tonase</span>
               </div>
             </div>
 
-            {/* CTA YANG SIMPEL */}
-            <div className="mt-12 flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <button
                 type="button"
                 onClick={handleWhatsAppClick}
-                className="bg-blue-600 text-white px-10 py-5 rounded-xl font-bold hover:bg-blue-700 transition-all text-center"
+                className="flex items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 font-bold text-white shadow-lg shadow-blue-200 transition-all hover:bg-blue-700"
               >
+                <MessageCircle size={20} />
                 Minta Penawaran Harga
               </button>
-              <button className="border border-slate-200 text-slate-900 px-10 py-5 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
-                Download COA Produk
+              <button
+                type="button"
+                className="flex items-center justify-center gap-3 rounded-2xl border border-slate-200 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-50"
+              >
+                <FileText size={20} className="text-blue-600" />
+                Download COA
               </button>
             </div>
           </motion.div>
-
         </div>
       </Container>
     </section>
