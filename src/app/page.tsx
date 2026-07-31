@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
@@ -12,29 +10,14 @@ import ProductsSection from "@/sections/products/products-section";
 import CTASection from "@/sections/cta/cta-section";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
 import PageLoader from "@/components/ui/page-loader";
+import { usePageReady } from "@/hooks/use-page-ready";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const handlePageLoad = () => {
-      setIsLoading(false);
-    };
-
-    if (document.readyState === "complete") {
-      setIsLoading(false);
-    } else {
-      window.addEventListener("load", handlePageLoad);
-    }
-
-    return () => {
-      window.removeEventListener("load", handlePageLoad);
-    };
-  }, []);
+  const isLoading = usePageReady();
 
   return (
     <>
-      <PageLoader isLoading={isLoading} />
+      <PageLoader isLoading={isLoading} minVisibleDelay={800} />
 
       <Navbar />
 
