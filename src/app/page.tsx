@@ -21,30 +21,24 @@ export default function Home() {
 
       <Navbar />
 
-      {/* <main className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"> */}
-      <main className="h-screen overflow-y-scroll scroll-smooth md:snap-y md:snap-mandatory md:scroll-pt-20">
-        {/* <section className="snap-start min-h-screen"> */}
-        <section className="min-h-screen md:snap-start">
+      <main className="h-screen overflow-y-scroll scroll-smooth">
+        <section className="min-h-screen">
           <HeroSection />
         </section>
 
-        {/* <section className="snap-start min-h-screen"> */}
-        <section className="min-h-screen md:snap-start">
+        <section className="min-h-screen">
           <AboutSection />
         </section>
 
-        {/* <section className="snap-start min-h-screen"> */}
-        <section className="min-h-screen md:snap-start">
+        <section className="min-h-screen">
           <AdvantagesSection />
         </section>
 
-        {/* <section className="snap-start min-h-screen"> */}
-        <section className="min-h-screen md:snap-start">
+        <section className="min-h-screen">
           <ProductsSection />
         </section>
 
-        {/* <section className="snap-start min-h-screen"> */}
-        <section className="min-h-screen md:snap-start">
+        <section className="min-h-screen">
           <CTASection />
           <Footer />
         </section>
