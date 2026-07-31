@@ -92,7 +92,7 @@ export default function AboutSection() {
             </div>
 
             <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
-              Perusahaan Gula <br />
+              Distributor Gula <br />
               Dengan <span className="text-blue-600">Standar Kualitas</span>
             </h2>
 
