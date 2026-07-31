@@ -19,32 +19,34 @@ export default function Home() {
     <>
       <PageLoader isLoading={isLoading} minVisibleDelay={800} />
 
-      <Navbar />
+      <div id="page-content">
+        <Navbar />
 
-      <main className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
-        <section className="snap-start min-h-screen">
-          <HeroSection />
-        </section>
+        <main className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
+          <section className="snap-start min-h-screen">
+            <HeroSection />
+          </section>
 
-        <section className="snap-start min-h-screen">
-          <AboutSection />
-        </section>
+          <section className="snap-start min-h-screen">
+            <AboutSection />
+          </section>
 
-        <section className="snap-start min-h-screen">
-          <AdvantagesSection />
-        </section>
+          <section className="snap-start min-h-screen">
+            <AdvantagesSection />
+          </section>
 
-        <section className="snap-start min-h-screen">
-          <ProductsSection />
-        </section>
+          <section className="snap-start min-h-screen">
+            <ProductsSection />
+          </section>
 
-        <section className="snap-start min-h-screen">
-          <CTASection />
-          <Footer />
-        </section>
-      </main>
+          <section className="snap-start min-h-screen">
+            <CTASection />
+            <Footer />
+          </section>
+        </main>
 
-      <WhatsAppButton />
+        <WhatsAppButton />
+      </div>
     </>
   );
 }

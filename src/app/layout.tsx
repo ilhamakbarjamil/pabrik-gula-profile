@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+
+import InitialPageLoader from "@/components/ui/initial-page-loader";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,8 +34,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="loading">
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html.loading { overflow: hidden; }
+              html.loading #page-content { visibility: hidden; }
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${poppins.variable}`}>
+        <InitialPageLoader />
         {children}
       </body>
     </html>
