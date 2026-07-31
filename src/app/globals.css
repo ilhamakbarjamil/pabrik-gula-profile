@@ -11,6 +11,34 @@ html {
   scroll-behavior: smooth;
 }
 
+html.loading {
+  overflow: hidden;
+}
+
+html.loading #page-content {
+  visibility: hidden;
+}
+
+@keyframes page-loader-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+#page-loader-progress {
+  animation: page-loader-slide 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #page-loader-progress {
+    animation: none;
+    width: 100%;
+  }
+}
 
 body {
   background: var(--background);
